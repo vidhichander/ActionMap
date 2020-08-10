@@ -13,6 +13,11 @@ class Representative < ApplicationRecord
             street = ''
             state = ''
             zip = ''
+            email = ''
+            party = ''
+            phone = ''
+            photo = ''
+
 
             rep_info.offices.each do |office|
                 if office.official_indices.include? index
@@ -30,9 +35,24 @@ class Representative < ApplicationRecord
               end
             end
 
+            if !official.emails.nil?
+              email = official.emails
+            end
+
+            if !official.party.nil?
+              party = official.party
+            end
+
+            if !official.phones.nil?
+              phone = official.phones
+            end
+
+            if !official.photo_url.nil?
+              photo = official.photo_url
+            end
 
             rep = Representative.create!({ name: official.name, ocdid: ocdid_temp,
-                title: title_temp, city: city, state: state, street: street, zip: zip, party: official.party, phones: official.phones, emails: official.emails, photo: official.photo_url})
+                title: title_temp, city: city, state: state, street: street, zip: zip, party: party, phones: phone, emails: email, photo: photo})
             reps.push(rep)
         end
 
