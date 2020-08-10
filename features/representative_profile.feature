@@ -27,7 +27,7 @@ Scenario: representative not found
   And I should see "Invalid"
 
 Scenario: Access representative profile from news_page
-  Given I am on "news article"
+  Given I am on the news_items page
   When I press "representative name"
   Then I should see "name"
   And I should see "some other detail of the representative"

@@ -3,38 +3,38 @@
 %h3 Details about Representative
 %link(rel="stylesheet" href="http://twitter.github.com/bootstrap/1.4.0/bootstrap.min.css")
 
-%ul{:class => "list-inline text-center"}
+%ul#details
 - @representatives.each do |rep|
-  %li{:class => "list-inline-item"}
+  %li {:style => "font-size: 45"}
     Name:
     = rep.name
 
-  %li{:class => "list-inline-item"}
+  %li
     OCD ID:
     = rep.ocdid
 
-  %li{:class => "list-inline-item"}
+  %li
     Office:
     = rep.title
 
-  %li{:class => "list-inline-item"}
+  %li
     Address:
     = rep.street + " " + rep.state + " " + rep.city + " " + rep.zip
 
-  %li{:class => "list-inline-item"}
+  %li
     Party:
     = rep.party
 
-  %li{:class => "list-inline-item"}
+  %li
     Phones:
     = rep.phones
 
-  %li{:class => "list-inline-item"}
+  %li
     Email:
     = rep.emails
 
-  %img{:src => rep.photo, :width => "200", :height => "200", :class => "img-responsive", :alt => "Generic placeholder thumbnail", :align => "middle"}
+  %img{:src => rep.photo, :width => "200", :height => "200", :class => "img-responsive", :alt => "Generic placeholder thumbnail", :align => "center"}
 
-  = link_to representative_news_items_path(rep.id), class: 'btn btn-primary' do
+  link_to representative_news_items_path(rep.id), class: 'btn btn-default' do
     %i.fas.fa-newspaper
     News Articles
