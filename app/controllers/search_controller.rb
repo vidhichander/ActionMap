@@ -20,7 +20,7 @@ class SearchController < ApplicationController
 
     def show
 
-        if params[:format].empty?
+        if params[:format].nil?
           @name = params[:name]
         else
           @name = params[:name] + "." + params[:format]
