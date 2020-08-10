@@ -3,7 +3,7 @@
 %h3 Details about Representative
 %link(rel="stylesheet" href="http://twitter.github.com/bootstrap/1.4.0/bootstrap.min.css")
 
-%ul :class => "list-inline text-center"
+%ul{:class => "list-inline text-center"}
 - @representatives.each do |rep|
   %li{:class => "list-inline-item"}
     Name:
@@ -35,6 +35,6 @@
 
   %img{:src => rep.photo, :width => "200", :height => "200", :class => "img-responsive", :alt => "Generic placeholder thumbnail", :align => "middle"}
 
-  link_to representative_news_items_path(rep.id), class: 'btn btn-default' do
-  %i.fas.fa-newspaper
-  News Articles
+  = link_to representative_news_items_path(rep.id), class: 'btn btn-primary' do
+      %i.fas.fa-newspaper
+      News Articles
