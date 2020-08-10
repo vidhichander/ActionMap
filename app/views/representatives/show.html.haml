@@ -1,11 +1,11 @@
 -# in app/views/representatives/show.html.haml
 
-%h3 Details about Representative
+%h1 {:id => "firstHeading", :class => "firstHeading"} Details about Representative
 %link(rel="stylesheet" href="http://twitter.github.com/bootstrap/1.4.0/bootstrap.min.css")
 
 %ul#details
 - @representatives.each do |rep|
-  %li {:style => "font-size: 45"}
+  %li
     Name:
     = rep.name
 
@@ -35,6 +35,6 @@
 
   %img{:src => rep.photo, :width => "200", :height => "200", :class => "img-responsive", :alt => "Generic placeholder thumbnail", :align => "center"}
 
-  link_to representative_news_items_path(rep.id), class: 'btn btn-default' do
+  = link_to representative_news_items_path(rep.id), class: 'btn btn-default' do
     %i.fas.fa-newspaper
     News Articles
