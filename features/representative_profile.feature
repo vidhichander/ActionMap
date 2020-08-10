@@ -39,8 +39,15 @@ Scenario: representative not found
   And I should see "Invalid"
 
 Scenario: Access representative profile from news_page
-  Given I am on the news_items page
-  When I press "representative name"
-  Then I should see "name"
-  And I should see "some other detail of the representative"
-  And I should not see "another representative"
+  Given I am on the representatives page
+  When I fill in "address" with "Idaho"
+  And I press "Search"
+  Then I should see "Donald J. Trump"
+  When I follow "Donald J. Trump"
+  And I press "News Articles"
+  Then I should see "Listing News Articles for Donald J. Trump"
+  When I follow "Donald J. Trump"
+  Then I should see "Donald J. Trump"
+  And I should see "Republican Party"
+  And I should see "Washington"
+  And I should not see "Listing"
