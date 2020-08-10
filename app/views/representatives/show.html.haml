@@ -3,7 +3,7 @@
 %h3 Details about Representative
 
 %ul#details
-- @representatives.each do |rep,|
+- @representatives.each_with_index do |rep, _index|
   %li
     Name:
     = rep.name
@@ -32,7 +32,9 @@
     Email:
     = rep.emails
 
-  %img{:src => rep.photo}
+  %li
+    Photo:
+    = rep.photo
 
   = link_to representative_news_items_path(rep.id), class: 'btn btn-primary' do
     %i.fas.fa-newspaper

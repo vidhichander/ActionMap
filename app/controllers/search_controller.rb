@@ -20,7 +20,7 @@ class SearchController < ApplicationController
 
     def show
         @name = params[:name]
-        @representatives = Representative.where(:name => @name)
+        @representatives = Representative.where(:name => @name).limit(1)
         render 'representatives/show'
     end
 end

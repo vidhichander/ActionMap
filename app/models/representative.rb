@@ -36,7 +36,7 @@ class Representative < ApplicationRecord
             end
 
             if !official.emails.nil?
-              email = official.emails.pop
+              email = official.emails
             end
 
             if !official.party.nil?
@@ -44,7 +44,7 @@ class Representative < ApplicationRecord
             end
 
             if !official.phones.nil?
-              phone = official.phones.pop
+              phone = official.phones
             end
 
             if !official.photo_url.nil?
