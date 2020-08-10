@@ -35,7 +35,7 @@ class Representative < ApplicationRecord
               end
             end
 
-            if !official.emails.first.nil?
+            if !official.emails.empty?
               email = official.emails.first
             end
 
@@ -43,7 +43,7 @@ class Representative < ApplicationRecord
               party = official.party
             end
 
-            if !official.phones.first.nil?
+            if !official.phones.empty?
               phone = official.phones.first
             end
 
