@@ -26,15 +26,15 @@
 
   %li
     Phones:
-    = rep.phones
+    = rep.phones[0]
 
   %li
     Email:
-    = rep.emails
+    = rep.emails[0]
 
   %li
     Photo:
-    = rep.photo
+    = %img(src= rep.photo width="128" height="128")
 
   = link_to representative_news_items_path(rep.id), class: 'btn btn-primary' do
     %i.fas.fa-newspaper
