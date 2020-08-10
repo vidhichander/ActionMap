@@ -1,5 +1,5 @@
 class AddAddressToRepresentatives < ActiveRecord::Migration[5.2]
   def change
-    add_column :representatives, :address, :string, array: true
+    add_column :representatives, :address, :string
   end
 end
