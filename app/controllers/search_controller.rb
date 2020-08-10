@@ -19,7 +19,15 @@ class SearchController < ApplicationController
     end
 
     def show
-        @name = params[:name]
+
+        if params[:format].empty?
+          @name = params[:name]
+        else
+          @name = params[:name] + "." + params[:format]
+        end
+
+        puts(@name)
+
         @representatives = Representative.where(:name => @name).limit(1)
         render 'representatives/show'
     end

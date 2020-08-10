@@ -1,39 +1,40 @@
 -# in app/views/representatives/show.html.haml
 
 %h3 Details about Representative
+%link(rel="stylesheet" href="http://twitter.github.com/bootstrap/1.4.0/bootstrap.min.css")
 
-%ul#details
+%ul :class => "list-inline text-center"
 - @representatives.each do |rep|
-  %li
+  %li{:class => "list-inline-item"}
     Name:
     = rep.name
 
-  %li
+  %li{:class => "list-inline-item"}
     OCD ID:
     = rep.ocdid
 
-  %li
+  %li{:class => "list-inline-item"}
     Office:
     = rep.title
 
-  %li
+  %li{:class => "list-inline-item"}
     Address:
     = rep.street + " " + rep.state + " " + rep.city + " " + rep.zip
 
-  %li
+  %li{:class => "list-inline-item"}
     Party:
     = rep.party
 
-  %li
+  %li{:class => "list-inline-item"}
     Phones:
-    = rep.phones[0]
+    = rep.phones
 
-  %li
+  %li{:class => "list-inline-item"}
     Email:
-    = rep.emails[0]
+    = rep.emails
 
-  %img(src= "rep.photo" width="128" height="128")
+  %img{:src => rep.photo, :width => "200", :height => "200", :class => "img-responsive", :alt => "Generic placeholder thumbnail", :align => "middle"}
 
-  = link_to representative_news_items_path(rep.id), class: 'btn btn-primary' do
-    %i.fas.fa-newspaper
-    News Articles
+  link_to representative_news_items_path(rep.id), class: 'btn btn-default' do
+  %i.fas.fa-newspaper
+  News Articles

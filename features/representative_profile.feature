@@ -11,12 +11,12 @@ Scenario: Search for representative address in search field
   When I fill in "address" with "Idaho"
   And I press "Search"
   Then I should see "Brad Little"
-  And I should see "Janice McGeachin"
-  When I follow "Brad Little"
-  Then I should see "Brad Little"
+  And I should see "Donald J. Trump"
+  When I follow "Donald J. Trump"
+  Then I should see "Donald J. Trump"
   Then I should see "Republican Party"
-  And I should see "Boise"
-  And I should see "(208) 334-2100"
+  And I should see "Washington"
+  And I should see "(202) 456-1111"
   And I should not see "James E. Risch"
 
 Scenario: representative not found

@@ -50,10 +50,10 @@ class Representative < ApplicationRecord
             if !official.photo_url.nil?
               photo = official.photo_url
             end
-
             rep = Representative.create!({ name: official.name, ocdid: ocdid_temp,
                 title: title_temp, city: city, state: state, street: street, zip: zip, party: party, phones: phone, emails: email, photo: photo})
             reps.push(rep)
+
         end
 
         reps
