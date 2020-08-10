@@ -6,10 +6,6 @@ Given /^(?:|I )am on (.+)$/ do |page_name|
   visit path_to(page_name)
 end
 
-Given /the following representatives exist/ do |representatives|
-
-end
-
 When /^(?:|I )fill in "([^"]*)" with "([^"]*)"$/ do |field, value|
   fill_in(field, :with => value)
 end
@@ -72,4 +68,8 @@ end
 Then /^the rating of "([^"]*)" should be "([^"]*)"$/ do |news, rating|
   step %{I should see "#{news}"}
   step %{I should see "#{rating}"}
+end
+
+When /^(?:|I )follow "([^"]*)"$/ do |link|
+  click_link(link)
 end

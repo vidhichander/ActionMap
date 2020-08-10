@@ -6,23 +6,25 @@ Feature: display representatives profile upon searching address
 
 Background: representative data has been added to database
 
-  Given the following representatives exist:
-  | ocd_id  | name | title | created_at | updated_at |
-
 Scenario: Search for representative address in search field
   Given I am on the representatives page
-  When I fill in "address" with "Address"
+  When I fill in "address" with "Idaho"
   And I press "Search"
-  Then I should see "name"
-  And I should see "some other detail of the representative"
-  And I should not see "another representative"
+  Then I should see "Brad Little"
+  And I should see "Janice McGeachin"
+  When I follow "Brad Little"
+  Then I should see "Brad Little"
+  Then I should see "Republican Party"
+  And I should see "Boise"
+  And I should see "(208) 334-2100"
+  And I should not see "James E. Risch"
 
 Scenario: representative not found
   Given I am on the representatives page
-  When I fill in "address" with "Address"
+  When I fill in "address" with "error"
   And I press "Search"
-  Then I should be on "homepage"
-  And I should see "a flash notification"
+  Then I should be on the representatives page
+  And I should see "Invalid"
 
 Scenario: Access representative profile from news_page
   Given I am on "news article"
