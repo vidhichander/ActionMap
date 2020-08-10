@@ -33,7 +33,7 @@
     Email:
     = rep.emails
 
-  %img{:src => rep.photo, :class => "img-responsive", :alt => "Generic placeholder thumbnail", :align => "center"}
+  %img{:src => rep.photo, :width => "100%", :height => "100%", :class => "img-responsive", :alt => "Generic placeholder thumbnail", :align => "center"}
 
   = link_to representative_news_items_path(rep.id), class: 'btn btn-default' do
     %i.fas.fa-newspaper
