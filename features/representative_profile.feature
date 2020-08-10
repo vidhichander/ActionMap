@@ -38,13 +38,13 @@ Scenario: representative not found
   Then I should be on the representatives page
   And I should see "Invalid"
 
-Scenario: Access representative profile from news_page
+Scenario: Access representative profile from news_page index
   Given I am on the representatives page
   When I fill in "address" with "Idaho"
   And I press "Search"
   Then I should see "Donald J. Trump"
   When I follow "Donald J. Trump"
-  And I press "News Articles"
+  And I follow "News Articles"
   Then I should see "Listing News Articles for Donald J. Trump"
   When I follow "Donald J. Trump"
   Then I should see "Donald J. Trump"
