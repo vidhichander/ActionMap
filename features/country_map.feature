@@ -7,9 +7,6 @@ Feature: click counties map to see list of representatives
 
 Background: representatives in database
 
-Given the following representatives exist:
-| ocd_id  | name | title | created_at | updated_at |
-
 Scenario: Click on county to access representatives list
   When I press "County Name"
   Then I should be on "County Name"

@@ -18,7 +18,7 @@ class Representative < ApplicationRecord
             end
 
             rep = Representative.create!({ name: official.name, ocdid: ocdid_temp,
-                title: title_temp })
+                title: title_temp, address: official.address, party: official.party, phones: official.phones, emails: official.emails, photo: official.photo_url})
             reps.push(rep)
         end
 

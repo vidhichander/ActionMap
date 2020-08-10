@@ -1,0 +1,41 @@
+-# in app/views/representatives/show.html.haml
+
+%h3 Details about Representative
+
+%ul#details
+- @representatives.each_with_index do |rep, _index|
+  %li
+    Name:
+    = rep.name
+
+  %li
+    OCD ID:
+    = rep.ocdid
+
+  %li
+    Office:
+    = rep.title
+
+  %li
+    Address:
+    = rep.address
+
+  %li
+    Party:
+    = rep.party
+
+  %li
+    Phones:
+    = rep.phones
+
+  %li
+    Email:
+    = rep.emails
+
+  %li
+    Photo:
+    = rep.photo
+
+  = link_to representative_news_items_path(rep.id), class: 'btn btn-primary' do
+    %i.fas.fa-newspaper
+    News Articles
