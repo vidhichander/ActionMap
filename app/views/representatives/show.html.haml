@@ -35,7 +35,6 @@
 
   %img{:src => rep.photo, :class => "img-responsive", :alt => "Generic placeholder thumbnail", :align => "center"}
 
-  %li
-    News Articles:
-    = link_to representative_news_items_path(rep.id), class: 'btn btn-default' do
+  = link_to representative_news_items_path(rep.id), class: 'btn btn-default' do
     %i.fas.fa-newspaper
+    News Articles
