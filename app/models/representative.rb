@@ -35,16 +35,16 @@ class Representative < ApplicationRecord
               end
             end
 
-            if !official.emails.nil?
-              email = official.emails
+            if !official.emails.first.nil?
+              email = official.emails.first
             end
 
             if !official.party.nil?
               party = official.party
             end
 
-            if !official.phones.nil?
-              phone = official.phones
+            if !official.phones.first.nil?
+              phone = official.phones.first
             end
 
             if !official.photo_url.nil?
