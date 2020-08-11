@@ -8,9 +8,11 @@ Feature: click counties map to see list of representatives
 Background: representatives in database
 
 Scenario: Click on county to access representatives list
-  When I press "County Name"
-  Then I should be on "County Name"
-  And I should see "representative 1"
+  Given I am on the Home page
+  When I follows California
+  Then I should see "California"
+  And I follows Alameda County
+  Then I should see "Alameda County, CA"
   And I should see "representative 2"
   And I should not see "representative 3"
 
