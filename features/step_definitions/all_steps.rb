@@ -73,3 +73,12 @@ end
 When /^(?:|I )follow "([^"]*)"$/ do |link|
   click_link(link)
 end
+
+When /^(?:|I )follows California/ do
+  puts(State.where(:symbol => 'CA'))
+  visit state_map_path(State.where(:symbol => 'CA'))
+end
+
+When /^(?:|I )follows Alameda County/ do
+  visit(county_path(:state_symbol => 'CA', :std_fips_code => '001'))
+end
