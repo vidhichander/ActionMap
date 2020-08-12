@@ -75,7 +75,7 @@ When /^(?:|I )follow "([^"]*)"$/ do |link|
 end
 
 When /^(?:|I )follows California/ do
-  visit state_map_path(State.where(:symbol => 'CA')[:symbol])
+  # visit state_map_path(State.where(:symbol => 'CA')[:symbol])
   visit ('/state/CA')
 end
 
