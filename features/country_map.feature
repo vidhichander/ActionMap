@@ -18,10 +18,8 @@ Scenario: Click on county to access representatives list
   When I follows California
   Then I should see "California"
   And I follows Alameda County
-  And I should see "representative 2"
-  And I should see "representative 3"
-
-Scenario: Access representative profile from representative list
-  Given I am on "County Name"
-  When I press "representative name"
-  Then I should see "representative details"
+  And I should see "Mike Pence"
+  And I should see "Betty T. Yee"
+  When I follow "Mike Pence"
+  Then I should see "Republican Party"
+  And I should not see "Betty T. Yee"
