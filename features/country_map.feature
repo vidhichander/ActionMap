@@ -18,9 +18,8 @@ Scenario: Click on county to access representatives list
   When I follows California
   Then I should see "California"
   And I follows Alameda County
-  Then I should see "Alameda County, CA"
   And I should see "representative 2"
-  And I should not see "representative 3"
+  And I should see "representative 3"
 
 Scenario: Access representative profile from representative list
   Given I am on "County Name"
