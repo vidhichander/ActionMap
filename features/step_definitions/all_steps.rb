@@ -80,7 +80,7 @@ When /^(?:|I )follows California/ do
 end
 
 When /^(?:|I )follows Alameda County/ do
-  visit('CA/county/001')
+  visit search_representatives_path('Alameda County')
 end
 
 Given /the following states exist/ do |states_table|
@@ -88,13 +88,5 @@ Given /the following states exist/ do |states_table|
     # each returned element will be a hash whose key is the table header.
     # you should arrange to add that movie to the database here.
       State.create!(state)
-  end
-end
-
-Given /the following counties exist/ do |county_table|
-  county_table.hashes.each do |county|
-    # each returned element will be a hash whose key is the table header.
-    # you should arrange to add that movie to the database here.
-      County.create!(county)
   end
 end
