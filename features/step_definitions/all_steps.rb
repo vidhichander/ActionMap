@@ -75,8 +75,8 @@ When /^(?:|I )follow "([^"]*)"$/ do |link|
 end
 
 When /^(?:|I )follows California/ do
-  puts(State.where(:symbol => 'CA'))
-  visit state_map_path(State.where(:symbol => 'CA'))
+  visit state_map_path(State.where(:symbol => 'CA')[:symbol])
+  visit ('/state/CA')
 end
 
 When /^(?:|I )follows Alameda County/ do
