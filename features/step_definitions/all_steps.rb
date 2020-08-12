@@ -80,5 +80,21 @@ When /^(?:|I )follows California/ do
 end
 
 When /^(?:|I )follows Alameda County/ do
-  visit(county_path(:state_symbol => 'CA', :std_fips_code => '001'))
+  visit('CA/county/001')
+end
+
+Given /the following states exist/ do |states_table|
+  states_table.hashes.each do |state|
+    # each returned element will be a hash whose key is the table header.
+    # you should arrange to add that movie to the database here.
+      State.create!(state)
+  end
+end
+
+Given /the following counties exist/ do |county_table|
+  county_table.hashes.each do |county|
+    # each returned element will be a hash whose key is the table header.
+    # you should arrange to add that movie to the database here.
+      County.create!(county)
+  end
 end
