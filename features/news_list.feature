@@ -4,16 +4,31 @@ Feature: adding issue and ratings columns to news articles
   So that I can view articles based on topics and add my ratings to them
   I want to have the option to add issue or rating when creating article
 
-Background: news articles have been added to database
+Background: issues have been added to database
 
-Given I am on "Create News Article"
+Given the user table exists:
+| provider                    | email | uid | first_name | last_name |
+| google_oauth2                 | vidhichander@gmail.com     | 30023020010 | Vidhi | Chander |
 
+And I am logged in
+And I am on the representatives page
 
 Scenario: Adding issue to news article
-  When I press "issue dropdown"
-  And I fill in "Issue option" with "News article name"
-  And I press "create"
-  Then the issue of "News article name" should be "Issue option"
+  When I fill in "address" with "Idaho"
+  And I press "Search"
+  Then I should see "Donald J. Trump"
+  When I follow "Donald J. Trump"
+  And I follow "News Articles"
+  Then I should see "Listing News Articles for Donald J. Trump"
+  And I should see "Issue"
+  When I follow "Add News Article"
+  Then I should see "Edit news article"
+  And I should see "Issue"
+  When I select "Immigration" from "Issue"
+  And I select "Donald J. Trump" from "Representative"
+  And I press "Save"
+  Then I should see "Representative: Donald J. Trump"
+  And I should see "Issue: Immigration"
 
 Scenario: Adding rating to news article
   When I press "rating dropdown"
