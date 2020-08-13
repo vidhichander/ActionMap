@@ -131,7 +131,6 @@ Given(/the following representatives exist/) do |user_table|
     end
 end
 
-
 Given(/^(?:|I )am visiting News Items page$/) do
     visit 'representatives/1075/representatives/1075/my_news_item/new'
 end
