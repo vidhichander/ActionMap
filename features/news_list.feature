@@ -39,7 +39,8 @@ Scenario: Adding issue to news article
 
 #announce
 Scenario: Adding rating to news article
-When I fill in Idaho and press search
+When I fill in "address" with "Alabama"
+And I press "Search"
 Then I should see "Donald J. Trump"
 When I follow "Donald J. Trump"
 And I follow "News Articles"
