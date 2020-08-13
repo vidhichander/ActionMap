@@ -11,11 +11,18 @@ Given the user table exists:
 | google_oauth2                 | vidhichander@gmail.com     | 30023020010 | Vidhi | Chander |
 
 And I am logged in
+
+And the following states exist:
+| name                    | symbol | fips_code | is_territory | lat_min | lat_max | long_min | long_max |
+| Alabama                 | AL     | 01        | 0            |-88.473227|-84.88908|30.223334|-84.88908|
+| California              | CA     | 06 |0|-124.409591|-114.131211|32.534156|-114.131211|
+
 And I am on the representatives page
 
 #announce
 Scenario: Adding issue to news article
-  When I fill in Idaho and press search
+  When I fill in "address" with "Alabama"
+  And I press "Search"
   Then I should see "Donald J. Trump"
   When I follow "Donald J. Trump"
   And I follow "News Articles"

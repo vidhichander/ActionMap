@@ -6,12 +6,18 @@ Feature: display representatives profile upon searching address
 
 Background: representative data has been added to database
 
+Given the following states exist:
+| name                    | symbol | fips_code | is_territory | lat_min | lat_max | long_min | long_max |
+| Alabama                 | AL     | 01        | 0            |-88.473227|-84.88908|30.223334|-84.88908|
+| California              | CA     | 06 |0|-124.409591|-114.131211|32.534156|-114.131211|
+
+
 #announce
 Scenario: Search for representative address in search field 1
   Given I am on the representatives page
-  When I fill in "address" with "Idaho"
+  When I fill in "address" with "Alabama"
   And I press "Search"
-  Then I should see "Brad Little"
+  Then I should see "Kay Ivey"
   And I should see "Donald J. Trump"
   When I follow "Donald J. Trump"
   Then I should see "Donald J. Trump"
@@ -23,13 +29,13 @@ Scenario: Search for representative address in search field 1
 #announce
 Scenario: Search for representative address in search field 2
   Given I am on the representatives page
-  When I fill in Idaho and press search
-  Then I should see "Brad Little"
+  When I fill in "address" with "Alabama"
+  And I press "Search"
+  Then I should see "Kay Ivey"
   And I should see "Donald J. Trump"
-  When I follow "Brad Little"
-  Then I should see "Brad Little"
-  Then I should see "Republican Party"
-  And I should see "Boise"
+  When I follow "Kay Ivey"
+  Then I should see "Governor of Alabama"
+  And I should see "Dexter"
   And I should not see "Donald J. Trump"
 
 #announce
@@ -43,7 +49,8 @@ Scenario: representative not found
 #announce
 Scenario: Access representative profile from news_page index
   Given I am on the representatives page
-  When I fill in Idaho and press search
+  When I fill in "address" with "Alabama"
+  And I press "Search"
   Then I should see "Donald J. Trump"
   When I follow "Donald J. Trump"
   And I follow "News Articles"

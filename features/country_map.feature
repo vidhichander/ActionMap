@@ -16,6 +16,11 @@ Background: state data in database
   |state_id| name | fips_code | fips_class |
   |01 | Alameda County | 001 | H1 |
 
+  And the following representatives exist:
+  |name| ocdid | title | party | phones | emails | photo | state | city | street | zip |
+  |Mike Pence| 123 | title | Republican Party | (202) 456-1111 | mike@gmail.com | https://www.whitehouse.gov/sites/whitehouse.gov/files/images/45/VPE%20Color.jpg | DC | Washington | 1600 Pennsylvania Avenue Northwest | 20500 |
+  |Betty T. Yee| 123 | title | Democratic Party | (916) 445-2636 | betty@gmail.com | url | CA | Sacramento | 300 Capitol Mall | 95814 |
+
   And I am on the Home page
 
 #announce

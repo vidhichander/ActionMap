@@ -10,10 +10,10 @@ end
 When(/^(?:|I )fill in "([^"]*)" with "([^"]*)"$/) do |field, value|
     fill_in(field, with: value)
 end
-
-When(/^(?:|I )fill in Idaho and press search$/) do
-    visit search_representatives_path('Idaho')
-end
+#
+# When(/^(?:|I )fill in Idaho and press search$/) do
+#     visit search_representatives_path('Idaho')
+# end
 
 When(/^(?:|I )select "([^"]*)" from "([^"]*)"$/) do |value, field|
     select(value, from: field)
@@ -122,6 +122,15 @@ Given(/the following counties exist/) do |news_table|
         County.create!(news)
     end
 end
+
+Given(/the following representatives exist/) do |user_table|
+    user_table.hashes.each do |user|
+        # each returned element will be a hash whose key is the table header.
+        # you should arrange to add that movie to the database here.
+        Representative.create!(user)
+    end
+end
+
 
 Given(/^(?:|I )am visiting News Items page$/) do
     visit 'representatives/1075/representatives/1075/my_news_item/new'
