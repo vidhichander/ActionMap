@@ -10,6 +10,10 @@ When /^(?:|I )fill in "([^"]*)" with "([^"]*)"$/ do |field, value|
   fill_in(field, :with => value)
 end
 
+When /^(?:|I )select "([^"]*)" from "([^"]*)"$/ do |value, field|
+  select(value, :from => field)
+end
+
 When /^(?:|I )press "([^"]*)"$/ do |button|
   click_button(button)
 end
@@ -89,4 +93,28 @@ Given /the following states exist/ do |states_table|
     # you should arrange to add that movie to the database here.
       State.create!(state)
   end
+end
+
+Given /the user table exists/ do |user_table|
+  user_table.hashes.each do |user|
+    # each returned element will be a hash whose key is the table header.
+    # you should arrange to add that movie to the database here.
+      User.create!(user)
+  end
+end
+
+Given /the following newsItems exist/ do |news_table|
+  news_table.hashes.each do |news|
+    # each returned element will be a hash whose key is the table header.
+    # you should arrange to add that movie to the database here.
+      NewsItem.create!(news)
+  end
+end
+
+Given /^(?:|I )am visiting News Items page$/ do
+  visit ('representatives/1075/representatives/1075/my_news_item/new')
+end
+
+Given /^I am logged in/ do
+  visit ('/auth/google_oauth2/callback')
 end
