@@ -12,6 +12,10 @@ Background: state data in database
   | Alabama                 | AL     | 01        | 0            |-88.473227|-84.88908|30.223334|-84.88908|
   | California              | CA     | 06 |0|-124.409591|-114.131211|32.534156|-114.131211|
 
+  And the following counties exist:
+  |state_id| name | fips_code | fips_class |
+  |01 | Alameda County | 001 | H1 |
+
   And I am on the Home page
 
 #announce

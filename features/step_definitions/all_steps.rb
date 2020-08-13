@@ -115,6 +115,14 @@ Given(/the following newsItems exist/) do |news_table|
     end
 end
 
+Given(/the following counties exist/) do |news_table|
+    news_table.hashes.each do |news|
+        # each returned element will be a hash whose key is the table header.
+        # you should arrange to add that movie to the database here.
+        County.create!(news)
+    end
+end
+
 Given(/^(?:|I )am visiting News Items page$/) do
     visit 'representatives/1075/representatives/1075/my_news_item/new'
 end
