@@ -46,6 +46,7 @@ class MyNewsItemsController < SessionController
 
     def set_representatives_list
         @representatives_list = Representative.all.map { |r| [r.name, r.id] }
+        puts(@representatives_list)
     end
 
     def set_news_item

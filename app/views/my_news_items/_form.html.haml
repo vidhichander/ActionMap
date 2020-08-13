@@ -32,7 +32,7 @@
         .col-sm-2
             = label :news_item, :issue, class: 'col-form-label'
         .col-sm-10
-            = select :news_item, :issue, representatives_list, { include_blank: true },
+            = select :news_item, :issue, {"Free Speech" => "1", "Immigration" => "2", "Terrorism" => "3", "Social Security and Medicare" => "3", "Abortion" => "4", "Student Loans" => "5"}, { include_blank: true },
                     class: 'form-control'
     .actions
         = f.submit 'Save', class: 'btn btn-primary'
