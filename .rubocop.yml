@@ -10,7 +10,7 @@ AllCops:
       - 'db/schema.rb'
       - 'config/routes.rb'
       - 'app/models/representative.rb'
-
+     
 Rails:
     Enabled: true
 

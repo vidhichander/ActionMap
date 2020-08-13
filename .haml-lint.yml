@@ -10,5 +10,5 @@ linters:
 exclude:
     - 'node_modules/**/*'
     - 'vendor/**/*'
-    - 'app/views/news_items/index.html.haml'
     - 'app/views/representatives/show.html.haml'
+    - 'app/views/news_items/index.html.haml'
