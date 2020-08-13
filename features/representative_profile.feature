@@ -6,6 +6,7 @@ Feature: display representatives profile upon searching address
 
 Background: representative data has been added to database
 
+@announce
 Scenario: Search for representative address in search field 1
   Given I am on the representatives page
   When I fill in "address" with "Idaho"

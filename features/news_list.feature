@@ -13,6 +13,7 @@ Given the user table exists:
 And I am logged in
 And I am on the representatives page
 
+@announce
 Scenario: Adding issue to news article
   When I fill in "address" with "Idaho"
   And I press "Search"

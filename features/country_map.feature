@@ -14,6 +14,7 @@ Background: state data in database
 
   And I am on the Home page
 
+@announce
 Scenario: Click on county to access representatives list
   When I follows California
   Then I should see "California"
