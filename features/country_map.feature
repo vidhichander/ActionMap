@@ -14,12 +14,12 @@ Background: state data in database
 
   And I am on the Home page
 
-@announce
+#announce
 Scenario: Click on county to access representatives list
   When I follows California
   Then I should see "California"
-  And I follows Alameda County
-  And I should see "Mike Pence"
+  When I follows Alameda County
+  Then I should see "Mike Pence"
   And I should see "Betty T. Yee"
   When I follow "Mike Pence"
   Then I should see "Republican Party"

@@ -6,7 +6,7 @@ Feature: display representatives profile upon searching address
 
 Background: representative data has been added to database
 
-@announce
+#announce
 Scenario: Search for representative address in search field 1
   Given I am on the representatives page
   When I fill in "address" with "Idaho"
@@ -20,18 +20,20 @@ Scenario: Search for representative address in search field 1
   And I should see "(202) 456-1111"
   And I should not see "James E. Risch"
 
-  Scenario: Search for representative address in search field 2
-    Given I am on the representatives page
-    When I fill in "address" with "Idaho"
-    And I press "Search"
-    Then I should see "Brad Little"
-    And I should see "Donald J. Trump"
-    When I follow "Brad Little"
-    Then I should see "Brad Little"
-    Then I should see "Republican Party"
-    And I should see "Boise"
-    And I should not see "Donald J. Trump"
+#announce
+Scenario: Search for representative address in search field 2
+  Given I am on the representatives page
+  When I fill in "address" with "Idaho"
+  And I press "Search"
+  Then I should see "Brad Little"
+  And I should see "Donald J. Trump"
+  When I follow "Brad Little"
+  Then I should see "Brad Little"
+  Then I should see "Republican Party"
+  And I should see "Boise"
+  And I should not see "Donald J. Trump"
 
+#announce
 Scenario: representative not found
   Given I am on the representatives page
   When I fill in "address" with "error"
@@ -39,6 +41,7 @@ Scenario: representative not found
   Then I should be on the representatives page
   And I should see "Invalid"
 
+#announce
 Scenario: Access representative profile from news_page index
   Given I am on the representatives page
   When I fill in "address" with "Idaho"

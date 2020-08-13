@@ -13,7 +13,7 @@ Given the user table exists:
 And I am logged in
 And I am on the representatives page
 
-@announce
+#announce
 Scenario: Adding issue to news article
   When I fill in "address" with "Idaho"
   And I press "Search"
@@ -31,6 +31,7 @@ Scenario: Adding issue to news article
   Then I should see "Representative: Donald J. Trump"
   And I should see "Issue: Immigration"
 
+#announce
 Scenario: Adding rating to news article
 When I fill in "address" with "Idaho"
 And I press "Search"
