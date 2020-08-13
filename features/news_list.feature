@@ -15,8 +15,7 @@ And I am on the representatives page
 
 #announce
 Scenario: Adding issue to news article
-  When I fill in "address" with "Idaho"
-  And I press "Search"
+  When I fill in Idaho and press search
   Then I should see "Donald J. Trump"
   When I follow "Donald J. Trump"
   And I follow "News Articles"
@@ -33,8 +32,7 @@ Scenario: Adding issue to news article
 
 #announce
 Scenario: Adding rating to news article
-When I fill in "address" with "Idaho"
-And I press "Search"
+When I fill in Idaho and press search
 Then I should see "Donald J. Trump"
 When I follow "Donald J. Trump"
 And I follow "News Articles"

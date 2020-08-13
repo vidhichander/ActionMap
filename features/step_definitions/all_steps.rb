@@ -11,6 +11,10 @@ When(/^(?:|I )fill in "([^"]*)" with "([^"]*)"$/) do |field, value|
     fill_in(field, with: value)
 end
 
+When(/^(?:|I )fill in Idaho and press search$/) do
+    visit search_representatives_path('Idaho')
+end
+
 When(/^(?:|I )select "([^"]*)" from "([^"]*)"$/) do |value, field|
     select(value, from: field)
 end

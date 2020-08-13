@@ -23,8 +23,7 @@ Scenario: Search for representative address in search field 1
 #announce
 Scenario: Search for representative address in search field 2
   Given I am on the representatives page
-  When I fill in "address" with "Idaho"
-  And I press "Search"
+  When I fill in Idaho and press search
   Then I should see "Brad Little"
   And I should see "Donald J. Trump"
   When I follow "Brad Little"
@@ -44,8 +43,7 @@ Scenario: representative not found
 #announce
 Scenario: Access representative profile from news_page index
   Given I am on the representatives page
-  When I fill in "address" with "Idaho"
-  And I press "Search"
+  When I fill in Idaho and press search
   Then I should see "Donald J. Trump"
   When I follow "Donald J. Trump"
   And I follow "News Articles"
