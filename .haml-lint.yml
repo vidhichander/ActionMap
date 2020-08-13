@@ -10,4 +10,4 @@ linters:
 exclude:
     - 'node_modules/**/*'
     - 'vendor/**/*'
-
+    - 'app/views/representatives/show.html.haml'

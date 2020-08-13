@@ -2,7 +2,6 @@
 
 class Representative < ApplicationRecord
     has_many :news_items, dependent: :delete_all
-    has_many :ratings
 
     def self.civic_api_to_representative_params(rep_info)
         reps = []
@@ -19,7 +18,6 @@ class Representative < ApplicationRecord
             phone = ''
             photo = ''
 
-
             rep_info.offices.each do |office|
                 if office.official_indices.include? index
                     title_temp = office.name
@@ -27,34 +25,24 @@ class Representative < ApplicationRecord
                 end
             end
 
-            if !official.address.nil?
-              official.address.each do |loc|
+            official.address&.each do |loc|
                 city = loc.city
                 street = loc.line1
                 state = loc.state
                 zip = loc.zip
-              end
             end
 
-            if !official.emails.nil?
-              email = official.emails
-            end
+            email = official.emails unless official.emails.nil?
 
-            if !official.party.nil?
-              party = official.party
-            end
+            party = official.party unless official.party.nil?
 
-            if !official.phones.nil?
-              phone = official.phones
-            end
+            phone = official.phones unless official.phones.nil?
 
-            if !official.photo_url.nil?
-              photo = official.photo_url
-            end
+            photo = official.photo_url unless official.photo_url.nil?
             rep = Representative.create!({ name: official.name, ocdid: ocdid_temp,
-                title: title_temp, city: city, state: state, street: street, zip: zip, party: party, phones: phone, emails: email, photo: photo})
+                title: title_temp, city: city, state: state, street: street, zip: zip, party: party,
+                phones: phone, emails: email, photo: photo })
             reps.push(rep)
-
         end
 
         reps

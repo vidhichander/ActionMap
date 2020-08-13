@@ -19,7 +19,7 @@
 
   %li
     Address:
-    = rep.street + " " + rep.city + " " + rep.state + " " + rep.zip
+    = rep.street + ' ' + rep.city + ' ' + rep.state + ' ' + rep.zip
 
   %li
     Party:
@@ -33,8 +33,9 @@
     Email:
     = rep.emails
 
-  %img{:src => rep.photo, :width => "40%", :height => "40%", :class => "img-responsive", :alt => "Generic placeholder thumbnail", :align => "center"}
+  %img{ src: rep.photo, width: '40%', height: '40%', class: 'img-responsive',
+  alt: 'Generic placeholder thumbnail', align: 'center' }
 
-  = link_to representative_news_items_path(rep.id), class: 'btn btn-default' do
-    %i.fas.fa-newspaper
-    News Articles
+= link_to representative_news_items_path(rep.id), class: 'btn btn-default' do
+  %i.fas.fa-newspaper
+  News Articles
