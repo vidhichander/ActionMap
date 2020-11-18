@@ -6,5 +6,5 @@ Actionmap is an app that allows users to learn more about their representatives,
 
 Further information on how you can set up your own ActionMap using Ruby on Rails, apply linters, use Heroku and more can be found [here](https://github.com/vidhichander/ActionMap/tree/master/docs) 
 
-The Heroku webpage created can be found [here](https://github.com/vidhichander/ActionMap/tree/master/docs)
+The Heroku webpage created can be found [here](https://glacial-falls-32149.herokuapp.com)
 </div>
